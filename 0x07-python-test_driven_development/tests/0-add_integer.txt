@@ -1,39 +1,27 @@
-# 0-add_integer.txt
+Testing add_integer
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-# making sure it works in all possible cases
-::
-    >>> add_integer(2, 3)
-    5
-::    
-    >>> add_integer(-2, 3)
-    1
-::
-    >>> add_integer(2, -3)
-    -1
-::
-    >>> add_integer(-2, -3)
-    -5
+# Making sure add_integer works.
+>>> add_integer(4, 2)
+6
+>>> add_integer(-4, 2)
+-2
+>>> add_integer(4, -2)
+2
+>>> add_integer(-4, -2)
+-6
 
-Note that the function can add two float argumets.
+# Making sure that the function adds two float arguments.
+>>> add_integer(3.5, 2)
+5
+>>> add_integer(3, 2.5)
+5
+>>> add_integer(3.5, 2.5)
+5
 
-::
-    >>> add_integer(4.5, 5)
-    9
-::
-    >>> add_integer(4, 5.5)
-    9
-::
-    >>> add_integer(4.5, 5.5)
-    9
-
-Non-Numbers
-===========
-
-Raises TypeError for invalid input.
-
->>> add_integer('Food', 3.5)
+# Making sure it raises TypeError for invalid input.
+>>> add_integer('Food', 2.5)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
@@ -42,7 +30,7 @@ Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 
-Making sure float overflow
+# Making sure float overflow
 >>> add_integer(float('inf'))
 Traceback (most recent call last):
 ...
@@ -52,11 +40,11 @@ Traceback (most recent call last):
 ...
 ValueError: cannot convert float NaN to integer
 
-Making sure default argument works
+# Default argument works
 >>> add_integer(2)
 100
 
-Make sure the function with no arguments
+# function with no arguments
 >>> add_integer()
 Traceback (most recent call last):
 ...

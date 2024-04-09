@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-A module that prints the name of a person
+Defines a name - printing function
 """
 
 

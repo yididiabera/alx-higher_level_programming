@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-A module that indents text
-"""
+"""Defines a text - indentation fun"""
 
 
 def text_indentation(text):
