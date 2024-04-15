@@ -1,1 +1,1 @@
-0x0A-python-inheritance
+python_inheritanc
