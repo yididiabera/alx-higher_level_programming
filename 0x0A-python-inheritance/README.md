@@ -1,1 +1,1 @@
-python_inheritanc
+inheritance
