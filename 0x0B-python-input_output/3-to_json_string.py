@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Define JSON representor function."""
-import json
+"""A module for appending to a file"""
 
 
-def to_json_string(my_obj):
-    """Returns the JSON representation of an object (string)"""
-    return json.dumps(my_obj)
+def append_write(filename="", text=""):
+    """A function that appends to a file"""
+    count = 0
+    with open(filename, "a", encoding="utf-8") as f:
+        count = f.write(text)
+    return count
