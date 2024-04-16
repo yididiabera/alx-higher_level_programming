@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""A class with a problematic method
+"""Define class with a problematic method
 """
 
-
 class BaseGeometry:
-    """A class with a method that raises exception"""
+    """Raises exception"""
 
     def area(self):
-        """Unimplemented area method"""
+        """Not implemented"""
         raise Exception('area() is not implemented')

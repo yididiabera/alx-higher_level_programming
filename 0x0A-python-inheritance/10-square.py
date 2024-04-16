@@ -1,17 +1,17 @@
 #!/usr/bin/python3
-"""A Square class
+"""Define a Square class
 """
 Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
-    """A Square class"""
+    """Represent a  Square class"""
 
     def __init__(self, size):
-        """Initialize the rectangle class."""
+        """Intializing a class."""
         self.integer_validator("size", size)
         self.__size = size
 
     def area(self):
-        """Calculate area of rectangle"""
+        """calculating an area of rectangle"""
         return self.__size * self.__size

@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-"""Module to check for the same object
+"""Define a function that check classes
 """
 
-
 def is_same_class(obj, a_class):
-    """Function to check for the same object"""
+    """checking for the same object"""
     if not type(obj) == a_class:
         return False
     else:

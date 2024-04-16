@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-"""A class with methods
+"""Defines a class with methods
 """
 
-
 class BaseGeometry:
-    """A class with methods"""
+    """represent class with methods"""
 
     def area(self):
-        """Unimplemented area method"""
+        """Not imlemeted area method"""
         raise Exception('area() is not implemented')
 
     def integer_validator(self, name, value):
-        """An integer validator function"""
+        """Validator function"""
         if type(value) != int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
