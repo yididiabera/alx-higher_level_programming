@@ -1,20 +1,18 @@
 #!/usr/bin/python3
-""" A module containing a student class
-"""
+""" A function that contains a student class"""
 
 
 class Student:
-    """ A student class
-    """
+    """ A student class"""
 
     def __init__(self, first_name, last_name, age):
-        """A method that initializes a Student"""
+        """Intializing a Student"""
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        """Retrieves a dictionary representation of a Student"""
+        """search and find a dictionary representation of a Student class"""
         my_dict = {}
         if isinstance(attrs, list):
             if "first_name" in attrs:

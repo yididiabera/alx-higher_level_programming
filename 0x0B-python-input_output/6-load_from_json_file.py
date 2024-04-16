@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""A module for deserializing an object from a file"""
+"""Defines a JSON file-reading function"""
 import json
 
 
 def load_from_json_file(filename):
-    """A function that deserializes from a file"""
+    """Creating a Python object from a JSON file"""
     my_obj = None
     data = None
     with open(filename, "r", encoding="utf-8") as f:

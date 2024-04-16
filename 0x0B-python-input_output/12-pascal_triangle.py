@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-""" A module containing a student class
-"""
+""" a fun containing a student class"""
 
 
 def pascal_triangle(n):
-    """A function that creates a pascal triangle"""
+    """Module that creates a pascal triangle"""
     if n <= 0:
         return []
     my_list = []
