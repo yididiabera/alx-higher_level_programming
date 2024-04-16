@@ -1,7 +1,11 @@
-#!/usr/bin/python3
-"""Serializing an object"""
-import json
 
-def to_json_string(my_obj):
-    """Modulethat serializes an object"""
-    return json.dumps(my_obj)
+#!/usr/bin/python3
+"""Module to check for same or inheritance class cases
+"""
+
+
+def is_kind_of_class(obj, a_class):
+    """Function to check for same or inheritance class cases"""
+    if isinstance(obj, a_class):
+        return True
+    return False
