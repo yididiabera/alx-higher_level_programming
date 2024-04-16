@@ -1,11 +1,8 @@
-
 #!/usr/bin/python3
-"""Module to check for same or inheritance class cases
-"""
+"""Define JSON representor function."""
+import json
 
 
-def is_kind_of_class(obj, a_class):
-    """Function to check for same or inheritance class cases"""
-    if isinstance(obj, a_class):
-        return True
-    return False
+def to_json_string(my_obj):
+    """Returns the JSON representation of an object (string)"""
+    return json.dumps(my_obj)
