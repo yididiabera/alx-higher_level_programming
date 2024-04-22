@@ -9,29 +9,29 @@ import json
 from models.rectangle import Rectangle
 import os
 """
-This module contains all unittest for Base class
+Mdule holds all unittest for Base class
 """
 
 
 class TestBase(unittest.TestCase):
     """
-    Class of functions to run tests
+    fun to run tests
     """
     def setUp(self):
         """
-        function to redirect stdout
+        fun to redirect standard output
         """
         sys.stdout = StringIO()
 
     def tearDown(self):
         """
-        cleans everything
+        cleaning
         """
         sys.stdout = sys.__stdout__
 
     def test_pep8_model(self):
         """
-        Tests for pep8 model
+        pep8 model testing
         """
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['models/base.py'])
@@ -39,7 +39,7 @@ class TestBase(unittest.TestCase):
 
     def test_pep8_test(self):
         """
-        Tests for pep8 test
+        pep8 test
         """
         p8 = pep8.StyleGuide(quiet=True)
         p = p8.check_files(['tests/test_models/test_base.py'])
@@ -63,7 +63,7 @@ class TestBase(unittest.TestCase):
 
     def test_id(self):
         """
-        Test check for id 
+        id checker 
         """
         Base._Base__nb_objects = 0
         b1 = Base()
@@ -79,7 +79,7 @@ class TestBase(unittest.TestCase):
 
     def test_from_json_string(self):
         """
-        Test check from json string
+        JSON string
         """
         self.assertEqual(Base.to_json_string(None), "[]")
         self.assertEqual(Base.to_json_string([]), "[]")
@@ -100,7 +100,7 @@ class TestBase(unittest.TestCase):
 
     def test_rectangle(self):
         """
-        Test check for rectangle
+        Rectangle check tester
         """
         R1 = Rectangle(4, 5, 6)
         R1_dict = R1.to_dictionary()
@@ -109,7 +109,7 @@ class TestBase(unittest.TestCase):
 
     def test_square(self):
         """
-        Test check for square creation
+        Square creation
         """
         S1 = Square(44, 55, 66, 77)
         S1_dict = S1.to_dictionary()
@@ -118,7 +118,7 @@ class TestBase(unittest.TestCase):
 
     def test_file_rectangle(self):
         """
-        Test check if file loads from rectangle
+        checker for the file loaded from rectangle
         """
         R1 = Rectangle(33, 34, 35, 26)
         R2 = Rectangle(202, 2)
@@ -129,7 +129,7 @@ class TestBase(unittest.TestCase):
 
     def test_file_square(self):
         """
-        Test check if file loads from square
+        checking for the file loaded form square
         """
         S1 = Square(22)
         S2 = Square(44, 44, 55, 66)

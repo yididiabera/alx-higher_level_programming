@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""Module to test the function rectangle"""
+"""Rectangle function testing"""
+
 import unittest
 import rectangle
 
@@ -7,11 +8,10 @@ import rectangle
 class TestRectangle(unittest.TestCase):
 
     def test_rectangle_output(self):
-        """Function to test the output the function rectangle"""
+        """rectangle function output tester"""
 
-        self.assertAlmostEqual(rectangle(,)
-
+        #self.assertAlmostEqual(rectangle(,))
     def test_rectangle_input(self):
-        """Function to test the input the function rectangle"""
+        """rectangle func input tester"""
 
-        self.assertRaises(TypeError, rectangle, )
+        self.assertRaises(TypeError, rectangle)
