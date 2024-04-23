@@ -4,24 +4,24 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Square class definition"""
+    """Definition for the class of Square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """constructor"""
+        """Intializer"""
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """get the value of size, in a square width == height"""
+        """size getter , for a square width == height"""
         return self.width
 
     @size.setter
     def size(self, value):
-        """set and validate size"""
+        """setter and validater for the size"""
         self.width = value
         self.height = value
 
     def update(self, *args, **kwargs):
-        """assigns attributes"""
+        """do the assignment for the attributes"""
         if args and len(args) != 0:
             i = 0
             for arg in args:
@@ -52,7 +52,7 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        """returns dictionary representation of a square"""
+        """returns rep of dict for the square"""
         return {
             "id": self.id,
             "size": self.size,
@@ -61,6 +61,6 @@ class Square(Rectangle):
         }
 
     def __str__(self):
-        """print representation"""
+        """rep for the print"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)

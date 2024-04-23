@@ -4,9 +4,9 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Class Rectangle"""
+    """The Rectangle Class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """constructor"""
+        """Constructor"""
         self.width = width
         self.height = height
         self.x = x
@@ -15,12 +15,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """returns width of the Rectangle"""
+        """Getter that returns width of the Rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """setting and validating width"""
+        """Moduel for setting and validating width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -29,12 +29,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """returns the height of the rectangle"""
+        """Getter that returns the height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """setting and validating height"""
+        """Module to set and validat value of height"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value <= 0:
@@ -43,12 +43,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """returns x"""
+        """getter for x"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """setting and validating x"""
+        """to set and validat x"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         if value < 0:
@@ -57,12 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """get the value of y"""
+        """getter for the value of y"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """setting and validating y"""
+        """Module to set and validat y"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         if value < 0:
@@ -70,11 +70,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """returns the area value of the Rectangle instance"""
+        """Module to return the value of area for the object of Rectangle"""
         return (self.__width * self.__height)
 
     def display(self):
-        """prints to stdout the rectangle instance with character '#'"""
+        """Module that prints to standard output the object of the rectangle with character '#'"""
         if self.width == 0 or self.height == 0:
             print("")
             return
@@ -86,8 +86,8 @@ class Rectangle(Base):
             print("")
 
     def update(self, *args, **kwargs):
-        """assigns an arguement to each attribute
-        as well as key: value assignments"""
+        """Module to assigns an arguement to individual attribute
+         and key: value assignments"""
         if args and len(args) != 0:
             a = 0
             for arg in args:
@@ -122,7 +122,7 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """returns dictionary representation of a rectangle"""
+        """Module to give back dict representn for a rectangle"""
         return {
             "id": self.id,
             "width": self.width,
@@ -132,7 +132,7 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """str representation"""
+        """rep of string"""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x,
                                                        self.y,
