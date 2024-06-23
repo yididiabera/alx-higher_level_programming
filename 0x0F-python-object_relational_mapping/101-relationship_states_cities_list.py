@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """
-Script that lists all `State` objects, and corresponding
-`City` objects, contained in the database `hbtn_0e_101_usa`.
+Itis a script that retrieves and displays all State objects along with their associated City objects from the hbtn_0e_101_usa database.
 
 Arguments:
-    mysql username (str)
-    mysql password (str)
-    database name (str)
+
+    MySQL username (str)
+    MySQL password (str)
+    Database name (str)
 """
 
 import sys

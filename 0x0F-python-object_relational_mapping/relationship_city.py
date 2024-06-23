@@ -9,12 +9,13 @@ from relationship_state import Base
 
 
 class City(Base):
-    """This class links to the `cities` table of our database.
+    """This class corresponds to the cities table in our database.
 
-    Attributes:
-        id (int): id of the city.
-        name (str): name of the city.
-        state_id (int): id of the associated state.
+        Attributes:
+
+            id (int): Identifier for the city.
+            name (str): Name of the city.
+            state_id (int): Identifier for the associated state.
     """
 
     __tablename__ = 'cities'
