@@ -8,30 +8,24 @@ Arguments:
     MySQL password (str)
     Database name (str)
 """
+CREATE DATABASE IF NOT EXISTS hbtn_0e_101_usa;
+USE hbtn_0e_101_usa;
+CREATE TABLE IF NOT EXISTS states ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id)
+);
+INSERT INTO states (name) VALUES ("California"), ("Arizona"), ("Texas"), ("New York"), ("Nevada");
 
-import sys
-from sqlalchemy import (create_engine)
-from sqlalchemy.orm import Session
-from sqlalchemy.engine.url import URL
-from relationship_state import Base, State
-from relationship_city import City
-
-
-if __name__ == "__main__":
-    mySQL_u = sys.argv[1]
-    mySQL_p = sys.argv[2]
-    db_name = sys.argv[3]
-
-    url = {'drivername': 'mysql+mysqldb', 'host': 'localhost', 'username': mySQL_u, 'password': mySQL_p, 'database': db_name}
-
-    engine = create_engine(URL(**url), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-
-    session = Session(bind=engine)
-
-    states = session.query(State)
-
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
-        for city in state.cities:
-            print("\t{}: {}".format(city.id, city.name))
+CREATE TABLE IF NOT EXISTS cities ( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    state_id INT NOT NULL,
+    name VARCHAR(256) NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY(state_id) REFERENCES states(id)
+);
+INSERT INTO cities (state_id, name) VALUES (1, "San Francisco"), (1, "San Jose"), (1, "Los Angeles"), (1, "Fremont"), (1, "Livermore");
+INSERT INTO cities (state_id, name) VALUES (2, "Page"), (2, "Phoenix");
+INSERT INTO cities (state_id, name) VALUES (3, "Dallas"), (3, "Houston"), (3, "Austin");
+INSERT INTO cities (state_id, name) VALUES (4, "New York");
+INSERT INTO cities (state_id, name) VALUES (5, "Las Vegas"), (5, "Reno"), (5, "Henderson"), (5, "Carson City");
